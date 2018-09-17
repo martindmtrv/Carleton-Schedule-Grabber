@@ -157,7 +157,11 @@ def infoGrabber():
                 while table != []:
                     # initialize temporary dictionary
                     course = {}
-
+                    
+                    # get rid of online only classes (they don't belong in calendar)
+                    if table[9] == 'Video on Demand':
+                        table = table[10:]
+                        
                     # if index 2 isn't in regular prof style add an empty block
                     if table[3][0] != '\n':
                         table.insert(3,'N/A')
@@ -186,15 +190,12 @@ def infoGrabber():
                     # append to timeTable
                     info.append(course)
                     table = table[14:]
-
-                    if table[9] == 'Video on Demand':
-                        table = table[10:]
-
+                    
                     # increment header counter
                     x += 1
             return info
 
-        except:
+        except FileNotFoundError:
             print('Could not find HTML file to parse. Make sure file name is schedule.html and is in current working directory'.center(80,' '))
             input('Press enter to try again')
 
