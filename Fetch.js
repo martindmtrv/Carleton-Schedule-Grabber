@@ -4,7 +4,7 @@ const cheerio = require('cheerio');
 // function to retrieve raw source from detail schedule
 // plans to eventually make this an authorized request to central
 function pull_html(){
-    return fs.readFileSync('data/MDWinter.html')
+    return fs.readFileSync('schedule.html')
 }
 
 function scraper(){
