@@ -1,0 +1,17 @@
+{
+  "name": "Carleton-Schedule-Grabber",
+  "version": "2.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.5",
+    "ical-generator": "^1.15.3",
+    "node-calendar": "^0.1.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
